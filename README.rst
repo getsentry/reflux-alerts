@@ -1,8 +1,15 @@
 This project is a work in progress.
 
+reflux-alerts
+=============
+
 An attempt to implement reusable flash message / alerting using the React + Reflux stack.
 
-The built-in implement follows Bootstrap3's markup conventions.
+The built-in Message display follows Bootstrap3's markup conventions.
+
+
+Usage
+-----
 
 .. code-block:: jsx
 
