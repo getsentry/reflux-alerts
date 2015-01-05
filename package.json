@@ -27,6 +27,7 @@
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/config/preprocessor.js",
+    "testPathDirs": ["src"],
     "unmockedModulePathPatterns": [
       "react",
       "reflux"
