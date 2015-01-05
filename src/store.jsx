@@ -1,3 +1,5 @@
+/** @jsx React.DOM */
+
 var Reflux = require("reflux");
 
 var AlertMessage = require('./AlertMessage');
