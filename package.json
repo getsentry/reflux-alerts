@@ -1,0 +1,19 @@
+{
+  "name": "reflux-alerts",
+  "version": "0.1.0",
+  "description": "Reusable flash / alert messages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/getsentry/reflux-alerts"
+  },
+  "author": "David Cramer <dcramer@gmail.com> (https://github.com/dcramer)",
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/getsentry/reflux-alerts/issues"
+  },
+  "homepage": "https://github.com/getsentry/reflux-alerts"
+}
