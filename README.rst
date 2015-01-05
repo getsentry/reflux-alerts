@@ -1,4 +1,6 @@
-This project is a work in progress and is not yet functional.
+This project is a work in progress.
+
+An attempt to implement reusable flash message / alerting using the React + Reflux stack.
 
 .. code-block:: jsx
 
@@ -13,3 +15,11 @@ This project is a work in progress and is not yet functional.
         return <Alerts.Alerts />;
       }
     });
+
+
+Because an alert is any valid component, you can also pas your own custom HTML or components:
+
+.. code-block:: Jsx
+
+	Alerts.add(<div className="alert">An arguably less useful version of an alert</div>);
+
