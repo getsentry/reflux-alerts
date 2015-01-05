@@ -1,0 +1,7 @@
+sudo: false
+language: javascript
+install:
+  - npm install --dev
+script:
+  - npm run build
+  - npm run test
