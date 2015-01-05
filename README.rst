@@ -1,15 +1,15 @@
 This project is a work in progress and is not yet functional.
 
-```jsx
-var Alerts = require("reflux-alerts");
+.. code-block:: jsx
 
-var MyComponent = React.createClass({
-  addAlert: function(){
-    Alerts.add(<Alerts.Message type="success">hello world</Alerts.Message>);
-  },
+    var Alerts = require("reflux-alerts");
 
-  render: function(){
-    return <Alerts.Alerts />;
-  }
-});
-```
+    var MyComponent = React.createClass({
+      addAlert: function(){
+        Alerts.add(<Alerts.Message type="success">hello world</Alerts.Message>);
+      },
+
+      render: function(){
+        return <Alerts.Alerts />;
+      }
+    });
