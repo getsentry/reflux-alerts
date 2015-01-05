@@ -4,34 +4,33 @@ var React = require("react");
 var Reflux = require("reflux");
 var alertStore = require('./store');
 
-var Alerts = React.createClass({
+var AlertMessage = React.createClass({
   propTypes: {
-    alert: React.PropTypes.shapeOf({
-      key: React.PropTypes.any.isRequired,
-      message: React.PropTypes.any.isRequired,
-      type: React.PropTypes.any.isRequired
-    }).isRequired
+    message: React.PropTypes.string.isRequired,
+    type: React.PropTypes.string
   },
 
-  closeAlert: function(alert) {
-    alertStore.closeAlert(alert.key);
+  closeAlert: function() {
+    alertStore.closeAlert(this);
   },
 
   render: function() {
     var className = this.props.className || 'alert';
-    if (this.props.alert.type !== '') {
-      className += 'alert-' + this.props.alert.type;
+    if (this.props.type !== '') {
+      className += 'alert-' + this.props.type;
     }
 
     return (
       <div className={className}>
         <div className="container">
-          <a className="close" onClick={this.closeAlert.bind(this, alert)}>×</a>
+          <a className="close" onClick={this.closeAlert}>×</a>
           <span className="icon icon-checkmark"></span>
           <span className="icon icon-x"></span>
-          {alert.message}
+          {this.props.message}
         </div>
       </div>
     );
   }
 });
+
+module.exports = AlertMessage;

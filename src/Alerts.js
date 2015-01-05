@@ -20,17 +20,8 @@ var Alerts = React.createClass({
   },
 
   render: function() {
-    var children = [];
-    this.state.alerts.forEach(function(alert){
-      var className = "alert alert-block alert-" + alert.type;
-
-      children.push(
-        <AlertMessage key={alert.key} alert={alert} />
-      );
-    });
-
     return (
-      <div {...this.props}>{children}</div>
+      <div {...this.props}>{this.state.alerts}</div>
     );
   }
 });

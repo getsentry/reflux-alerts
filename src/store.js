@@ -1,4 +1,6 @@
 var Reflux = require("reflux");
+
+var AlertMessage = require('./AlertMessage');
 var alertActions = require('./actions');
 
 // sequential counter to ensure each alert has a unique ID
@@ -8,18 +10,17 @@ var alertStore = Reflux.createStore({
   listenables: actions,
 
   onAddAlert: function(message, type){
-    alertCounter++;
-    this.alerts.push({
-      key: alertCounter;
-      message: message,
-      type: type
-    })
+    if (React.isValidElement(message)) {
+      this.alerts.push(message);
+    } else {
+      this.alerts.push(<AlertMessage type={type}>{message}</AlertMessage>);
+    }
     this.trigger(this.alerts);
   },
 
-  onCloseAlert: function(key){
-    this.alerts = this.alerts.filter(function(alert){
-      return alert.key != key;
+  onCloseAlert: function(alert){
+    this.alerts = this.alerts.filter(function(item){
+      return item !== alert;
     });
     this.trigger(this.alerts);
   }
