@@ -2,6 +2,8 @@ This project is a work in progress.
 
 An attempt to implement reusable flash message / alerting using the React + Reflux stack.
 
+The built-in implement follows Bootstrap3's markup conventions.
+
 .. code-block:: jsx
 
     var Alerts = require("reflux-alerts");
@@ -22,4 +24,3 @@ Because an alert is any valid component, you can also pas your own custom HTML o
 .. code-block:: Jsx
 
 	Alerts.add(<div className="alert">An arguably less useful version of an alert</div>);
-

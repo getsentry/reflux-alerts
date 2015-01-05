@@ -22,12 +22,11 @@ var AlertMessage = React.createClass({
 
     return (
       <div className={className}>
-        <div className="container">
-          <a className="close" onClick={this.closeAlert}>×</a>
-          <span className="icon icon-checkmark"></span>
-          <span className="icon icon-x"></span>
-          {this.props.children}
-        </div>
+        <button type="button" className="close" aria-label="Close"
+                onClick={this.closeAlert}>
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {this.props.children}
       </div>
     );
   }
