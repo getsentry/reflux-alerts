@@ -5,17 +5,24 @@ jest.dontMock('react');
 jest.dontMock('reflux');
 
 describe('Alerts', function() {
-  it('works at all', function() {
-    var React = require('react/addons');
-    var Alerts = require('../Alerts');
-    var TestUtils = React.addons.TestUtils;
+  var React = require('react/addons');
+  var Alerts = require('../Alerts');
+  var TestUtils = React.addons.TestUtils;
 
+  it('contains no children by default', function() {
     var container = TestUtils.renderIntoDocument(
       <Alerts />
     );
 
-    expect(container.getDOMNode().tagName).toEqual('DIV');
     expect(container.state.alerts.length).toEqual(0);
+    expect(container.getDOMNode().tagName).toEqual('DIV');
+    expect(container.getDOMNode().textContent).toEqual('');
+  });
+
+  it('renders an alert', function() {
+    var container = TestUtils.renderIntoDocument(
+      <Alerts />
+    );
 
     container.setState({
       alerts: [<span key="foo">alert</span>]
@@ -25,4 +32,5 @@ describe('Alerts', function() {
       container, 'span');
     expect(span.getDOMNode().textContent).toEqual('alert');
   });
+
 });
