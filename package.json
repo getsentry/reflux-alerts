@@ -22,7 +22,7 @@
     "gulp-react": "*",
     "jest-cli": "*",
     "react-tools": "*",
-    "reat": "*",
+    "react": "*",
     "reflux": "*"
   },
   "jest": {
