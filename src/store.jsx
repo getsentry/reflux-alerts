@@ -9,7 +9,7 @@ var alertActions = require('./actions');
 var alertCounter = 0;
 
 var alertStore = Reflux.createStore({
-  listenables: actions,
+  listenables: alertActions,
 
   onAddAlert: function(message, type){
     if (React.isValidElement(message)) {

@@ -25,3 +25,6 @@ var Alerts = React.createClass({
     );
   }
 });
+
+
+module.exports = Alerts;

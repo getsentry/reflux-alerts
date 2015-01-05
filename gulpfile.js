@@ -5,6 +5,6 @@ var gulp = require("gulp"),
 
 gulp.task('build', function () {
     return gulp.src(['src/**/*.jsx', 'src/**/*.js'])
-        .pipe(gp_react())
-        .pipe(gulp.dest('dist'));
+      .pipe(gp_react({harmony: true}))
+      .pipe(gulp.dest('dist'));
 });
