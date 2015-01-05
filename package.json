@@ -23,7 +23,7 @@
     "jest-cli": "*",
     "react-tools": "*",
     "reat": "*",
-    "reflux": "^0.2.2"
+    "reflux": "*"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/config/preprocessor.js",
