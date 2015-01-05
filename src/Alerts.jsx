@@ -15,10 +15,6 @@ var Alerts = React.createClass({
       };
   },
 
-  closeAlert: function(key) {
-    alertStore.closeAlert(key);
-  },
-
   render: function() {
     return (
       <div {...this.props}>{this.state.alerts}</div>

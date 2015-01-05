@@ -5,7 +5,7 @@ jest.dontMock('react');
 jest.dontMock('reflux');
 
 describe('Alerts', function() {
-  it('renders', function() {
+  it('works at all', function() {
     var React = require('react/addons');
     var Alerts = require('../Alerts');
     var TestUtils = React.addons.TestUtils;
@@ -14,15 +14,15 @@ describe('Alerts', function() {
       <Alerts />
     );
 
-    // // Verify that it's Off by default
-    // var label = TestUtils.findRenderedDOMComponentWithTag(
-    //   checkbox, 'label');
-    // expect(label.getDOMNode().textContent).toEqual('Off');
+    expect(container.getDOMNode().tagName).toEqual('DIV');
+    expect(container.state.alerts.length).toEqual(0);
 
-    // // Simulate a click and verify that it is now On
-    // var input = TestUtils.findRenderedDOMComponentWithTag(
-    //   checkbox, 'input');
-    // TestUtils.Simulate.change(input);
-    // expect(label.getDOMNode().textContent).toEqual('On');
+    container.setState({
+      alerts: [<span key="foo">alert</span>]
+    });
+
+    var span = TestUtils.findRenderedDOMComponentWithTag(
+      container, 'span');
+    expect(span.getDOMNode().textContent).toEqual('alert');
   });
 });
